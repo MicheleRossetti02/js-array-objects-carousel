@@ -103,10 +103,8 @@ for (let i = 0; i < text_img.length; i++) {
 next.addEventListener("click", function () {
     //img
     const slide = document.querySelectorAll(".slider > img");
-    console.log(slide);
 
     const currentImg = slide[img_active];
-    console.log(currentImg);
 
     //text
     const paragrafi = document.querySelectorAll(".info > span");
@@ -128,6 +126,45 @@ next.addEventListener("click", function () {
         currentPar.classList.remove("active");
         currentImg.classList.remove("active");
         img_active = 0
+    }
+
+    
+    const nextImg = slide[img_active];
+    nextImg.classList.add("active");
+    
+    
+    const nextPar = paragrafi[img_active];
+    nextPar.classList.add("active");
+
+    const nextTitle = titles[img_active];
+    nextTitle.classList.add("active");
+   
+})
+prev.addEventListener("click", function () {
+
+    const slide = document.querySelectorAll(".slider > img");
+
+    const currentImg = slide[img_active];
+
+    const paragrafi = document.querySelectorAll(".info > span");
+    const currentPar = paragrafi[img_active];
+
+    const titles = document.querySelectorAll(".info > h3");
+    const currentTitle = titles[img_active];
+
+    
+    if (img_active > 0) {
+        currentTitle.classList.remove("active")
+        currentPar.classList.remove("active");
+        currentImg.classList.remove("active");
+        img_active--
+        
+    }else{
+        currentTitle.classList.remove("active")
+        currentPar.classList.remove("active");
+        currentImg.classList.remove("active");
+        img_active = slide.length -1
+        
     }
 
     //img
