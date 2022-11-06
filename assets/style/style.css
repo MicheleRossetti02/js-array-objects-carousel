@@ -7,14 +7,21 @@
     /* width: 500px; */
     margin: 0 auto;
     position: relative;
-    
+    height: 600px;
 }
-img{
+.active{
+
     width: 100%;
-    display: none;
 object-fit: cover;
 
-height: 500px;
+
+}
+img{
+    display: none;
+    height: 600px;
+}
+.not_active{
+    display: none;
 }
 .active{
     display: block;
@@ -41,3 +48,14 @@ h3{
 span{
     display: none;
 }
+.thumbnails{
+    flex-direction: column;
+}
+.thumbs{
+
+display: block;
+height: 120px;
+}
+/* .thumbnails>img{
+    width: 100%;
+} */

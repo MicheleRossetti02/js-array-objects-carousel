@@ -37,7 +37,7 @@ const slides = document.querySelector('.slider')
 const prev = document.querySelector('.prev')
 const next = document.querySelector('.next')
 const description = document.querySelector('.info')
-
+const thumb = document.querySelector('.thumbnails')
 
 // images.forEach((image, i) => {
 //     const slide= `
@@ -74,16 +74,23 @@ for (let i = 0; i < url_img.length; i++) {
     const img_markup =  `<img class=" ${i === img_active ? "active" : ""}" src="./assets/${element}" alt="">`;
 
     slides.insertAdjacentHTML("beforeend",img_markup) 
+
+    // const thumbs_markup =  `<img class=" " src="./assets/${element}" alt="">`;
+
+    // thumb.insertAdjacentHTML("beforeend", thumbs_markup)
+
+    // console.log(thumbs_markup);
     
-    // let imgActive = 0;
-    // url_img.forEach((element,i=0) => {
-    //     element = url_img[i];
-    //     imgMarkup = `<img class="${i === imgActive ? "active" : ""}" src="./assets/img/${element}" alt="">`;
-    //     slideEl.insertAdjacentHTML("afterbegin",imgMarkup); 
-    // })
+    // console.log(url_img);
+}
+for (let i = 0; i < url_img.length; i++) {
+    const element = url_img[i];
+      const thumbs_markup =  `<img class="thumbs " src="./assets/${element}" alt="">`;
+
+    thumb.insertAdjacentHTML("beforeend", thumbs_markup)
+
+    console.log(thumbs_markup);
     
-    
-    console.log(url_img);
 }
 
 for (let i = 0; i < title_img.length; i++) {
@@ -101,16 +108,16 @@ for (let i = 0; i < text_img.length; i++) {
 }
 
 next.addEventListener("click", function () {
-    //img
+
     const slide = document.querySelectorAll(".slider > img");
 
     const currentImg = slide[img_active];
 
-    //text
+
     const paragrafi = document.querySelectorAll(".info > span");
     const currentPar = paragrafi[img_active];
     
-    //title
+
     const titles = document.querySelectorAll(".info > h3");
     const currentTitle = titles[img_active];
 
@@ -167,15 +174,15 @@ prev.addEventListener("click", function () {
         
     }
 
-    //img
+
     const nextImg = slide[img_active];
     nextImg.classList.add("active");
     
-    //text
+
     const nextPar = paragrafi[img_active];
     nextPar.classList.add("active");
 
-    //title
+
     const nextTitle = titles[img_active];
     nextTitle.classList.add("active");
    
